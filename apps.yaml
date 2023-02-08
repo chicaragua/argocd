@@ -4,13 +4,15 @@ metadata:
   name: apps
   namespace: argocd
 specs:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ci-cd
+  project: default
   source:
-    repoURL: 'https://github.com/chicaragua/ITA.git'
+    repoURL: https://github.com/chicaragua/ITA.git
     path: 14.K8s.Jenkins/
     targetRevision: master
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: ci-cd
+
   syncPolicy:
     automated:
       prune: true
